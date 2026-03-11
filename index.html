@@ -52,6 +52,11 @@
             scroll-behavior: smooth;
         }
 
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         h1,
         h2,
         h3,
@@ -516,7 +521,8 @@
         .ai-views-title-line {
             height: 1px;
             background: var(--text-secondary);
-            width: 300px;
+            flex-grow: 1;
+            max-width: 300px;
             opacity: 0.3;
         }
 
@@ -583,6 +589,11 @@
         .ai-profile-wrapper:hover .ai-profile-border {
             top: 15px;
             left: 15px;
+        }
+
+        /* Responsive spacing additions */
+        section {
+            width: 100%;
         }
 
         /* --- EXPERIENCE SECTION --- */
@@ -901,15 +912,29 @@
                 display: none;
             }
 
+            .ai-profile-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+
+            .ai-outer-heading {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
             .ai-section-bg-text {
                 font-size: 8rem;
                 opacity: 0.01;
             }
 
             /* Stack About section */
-            #about .container>div {
+            #about .container>div:last-child {
                 grid-template-columns: 1fr !important;
-                gap: 3rem !important;
+                gap: 2rem !important;
+            }
+
+            .ai-profile-img,
+            .ai-profile-border {
+                filter: grayscale(0%);
             }
         }
 
@@ -941,22 +966,39 @@
             }
 
             .container {
-                padding: 0 1.5rem;
+                padding: 0 1.2rem;
+            }
+
+            .ai-outer-description {
+                font-size: 1rem;
+            }
+
+            .ai-projects-text-description {
+                padding: 1rem;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             .ai-outer-heading {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .ai-outer-heading-2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+            }
+
+            .ai-projects-text-title {
+                font-size: 1.4rem;
+            }
+
+            .ai-contact-title {
+                font-size: 1.8rem;
             }
 
             .ai-button {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
             }
 
             .certs-grid {
