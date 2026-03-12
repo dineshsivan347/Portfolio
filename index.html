@@ -795,6 +795,24 @@
             font-size: 1.1rem;
         }
 
+        .ai-contact-socials-mobile {
+            display: none;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            font-size: 1.5rem;
+        }
+
+        .ai-contact-socials-mobile a {
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .ai-contact-socials-mobile a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
         .ai-contact-git-section {
             margin-top: 4rem;
             font-family: 'Source Code Pro', monospace;
@@ -848,6 +866,10 @@
         @media (max-width: 1024px) {
             .ai-side-elements {
                 display: none;
+            }
+
+            .ai-contact-socials-mobile {
+                display: flex;
             }
 
             .ai-side-nav {
@@ -1386,6 +1408,14 @@
                     <div class="ai-contact-button">
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ceitdinesh27@gmail.com" target="_blank"
                             class="ai-button">Say Hello</a>
+                    </div>
+
+                    <div class="ai-contact-socials-mobile">
+                        <a href="https://github.com/dineshsivan347" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/dinesh-s-58a892331/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ceitdinesh27@gmail.com"
+                            target="_blank"><i class="fas fa-envelope"></i></a>
                     </div>
 
                     <div class="ai-contact-git-section">
