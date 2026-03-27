@@ -36,7 +36,7 @@ const Navbar = () => {
           DINESH <span className="text-[#f8fafc]">S</span>
         </div>
         <div>
-          <a href="/Resume Dinesh S[1].pdf" target="_blank" rel="noreferrer" className="ai-button">
+          <a href="/resume.pdf" target="_blank" rel="noreferrer" className="ai-button">
             Resume
           </a>
         </div>

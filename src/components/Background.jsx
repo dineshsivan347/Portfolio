@@ -1,5 +1,43 @@
 import React, { useEffect, useRef } from 'react';
 
+class Particle {
+  constructor(canvasWidth, canvasHeight, colors) {
+    this.x = Math.random() * canvasWidth;
+    this.y = Math.random() * canvasHeight;
+    this.size = Math.random() * 2 + 1;
+    this.speedX = (Math.random() - 0.5) * 0.8;
+    this.speedY = (Math.random() - 0.5) * 0.8;
+    this.color = colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  update(canvasWidth, canvasHeight, mouse) {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x > canvasWidth) this.x = 0;
+    else if (this.x < 0) this.x = canvasWidth;
+    if (this.y > canvasHeight) this.y = 0;
+    else if (this.y < 0) this.y = canvasHeight;
+
+    if (mouse.x != null && mouse.y != null) {
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < 100) {
+        this.x += dx * 0.01;
+        this.y += dy * 0.01;
+      }
+    }
+  }
+
+  draw(ctx) {
+    ctx.fillStyle = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
 const Background = () => {
   const canvasRef = useRef(null);
 
@@ -33,49 +71,11 @@ const Background = () => {
       canvas.height = window.innerHeight;
     };
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.speedX = (Math.random() - 0.5) * 0.8;
-        this.speedY = (Math.random() - 0.5) * 0.8;
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if (this.x > canvas.width) this.x = 0;
-        else if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        else if (this.y < 0) this.y = canvas.height;
-
-        if (mouse.x != null && mouse.y != null) {
-          const dx = mouse.x - this.x;
-          const dy = mouse.y - this.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < 100) {
-            this.x += dx * 0.01;
-            this.y += dy * 0.01;
-          }
-        }
-      }
-
-      draw() {
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
     const createParticles = () => {
       particles = [];
       const count = (canvas.width * canvas.height) / 12000;
       for (let i = 0; i < count; i++) {
-        particles.push(new Particle());
+        particles.push(new Particle(canvas.width, canvas.height, colors));
       }
     };
 
@@ -119,8 +119,8 @@ const Background = () => {
     const animateParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
+        particles[i].update(canvas.width, canvas.height, mouse);
+        particles[i].draw(ctx);
       }
       connect();
       animationFrameId = requestAnimationFrame(animateParticles);
