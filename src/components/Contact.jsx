@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -39,10 +39,11 @@ const Contact = () => {
             Say Hello
           </a>
 
-          {/* Mobile Socials */}
-          <div className="flex lg:hidden justify-center gap-6 mt-16 text-slate-400">
+          {/* Socials */}
+          <div className="flex justify-center gap-6 mt-16 text-slate-400">
             <a href="https://github.com/dineshsivan347" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:-translate-y-1 transition-all"><FaGithub size={24} /></a>
             <a href="https://www.linkedin.com/in/dinesh-s-58a892331/" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:-translate-y-1 transition-all"><FaLinkedin size={24} /></a>
+            <a href="https://www.instagram.com/iamdineshsivan/" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:-translate-y-1 transition-all"><FaInstagram size={24} /></a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ceitdinesh27@gmail.com" target="_blank" rel="noreferrer" className="hover:text-blue-500 hover:-translate-y-1 transition-all"><FaEnvelope size={24} /></a>
           </div>
         </motion.div>

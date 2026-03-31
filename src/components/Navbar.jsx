@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -43,7 +43,7 @@ const Navbar = () => {
       </header>
 
       {/* Left Sidebar (Socials) */}
-      <div className="fixed bottom-0 left-[40px] z-10 hidden lg:flex flex-col items-center opacity-0 animate-[fadeInSides_1s_ease_1s_forwards]">
+      <div className="fixed bottom-0 left-[40px] z-[100] hidden lg:flex flex-col items-center opacity-0 animate-[fadeInSides_1s_ease_1s_forwards]">
         <div className="flex flex-col gap-5">
           <a href="https://github.com/dineshsivan347" target="_blank" rel="noreferrer" className="group relative text-slate-300 hover:text-blue-500 hover:-translate-y-1 transition-all duration-300">
             <FaGithub size={20} />
@@ -52,6 +52,10 @@ const Navbar = () => {
           <a href="https://www.linkedin.com/in/dinesh-s-58a892331/" target="_blank" rel="noreferrer" className="group relative text-slate-300 hover:text-blue-500 hover:-translate-y-1 transition-all duration-300">
             <FaLinkedin size={20} />
             <span className="absolute left-[45px] top-1/2 -translate-y-1/2 translate-x-[10px] bg-slate-800/95 text-blue-500 px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 font-mono border border-blue-500/20 pointer-events-none">LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/iamdineshsivan/" target="_blank" rel="noreferrer" className="group relative text-slate-300 hover:text-blue-500 hover:-translate-y-1 transition-all duration-300">
+            <FaInstagram size={20} />
+            <span className="absolute left-[45px] top-1/2 -translate-y-1/2 translate-x-[10px] bg-slate-800/95 text-blue-500 px-2 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 font-mono border border-blue-500/20 pointer-events-none">Instagram</span>
           </a>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ceitdinesh27@gmail.com" target="_blank" rel="noreferrer" className="group relative text-slate-300 hover:text-blue-500 hover:-translate-y-1 transition-all duration-300">
             <FaEnvelope size={20} />
