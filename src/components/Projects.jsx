@@ -1,9 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaExternalLinkAlt, FaGithub, FaBed, FaPencilAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaGithub, FaBed, FaPencilAlt, FaGlobe } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
+    {
+      title: "SitePunch",
+      featured: "GitHub Repository",
+      description: "A web application project built to demonstrate practical development skills. Developed using modern web technologies and available as an open-source repository on GitHub.",
+      techs: ["JavaScript", "HTML/CSS", "Web Development"],
+      github: "https://github.com/dineshsivan347/SitePunch",
+      icon: <FaGlobe size={60} />,
+      bgGradient: "from-blue-800 to-cyan-700"
+    },
     {
       title: "Institution Guesthouse Booking Portal",
       featured: "Featured Project",

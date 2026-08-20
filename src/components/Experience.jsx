@@ -4,6 +4,17 @@ import { motion } from 'framer-motion';
 const Experience = () => {
   const experiences = [
     {
+      company: "Tekzow",
+      role: "AI Developer Intern",
+      location: "Bangalore, India",
+      current: true,
+      responsibilities: [
+        "Currently working as an AI Developer Intern, contributing to AI-driven application development and real-world software projects.",
+        "Developing and integrating AI-based features into web applications using modern development tools and frameworks.",
+        "Collaborating with the development team to design, implement, test, and improve production-ready solutions."
+      ]
+    },
+    {
       company: "Sparkout Solutions",
       role: "Web Development Intern",
       responsibilities: [
@@ -58,8 +69,19 @@ const Experience = () => {
               </div>
               
               <div className="flex-1">
-                <h3 className="text-2xl font-montserrat font-bold mb-1 text-slate-200">{exp.company}</h3>
-                <div className="text-blue-500 font-mono mb-4 text-sm">{exp.role}</div>
+                <h3 className="text-2xl font-montserrat font-bold mb-1 text-slate-200">
+                  {exp.company}
+                  {exp.current && (
+                    <span className="ml-3 inline-flex items-center text-xs font-mono font-normal bg-green-500/10 text-green-400 border border-green-500/20 px-2 py-0.5 rounded-full align-middle">
+                      <span className="w-1.5 h-1.5 bg-green-400 rounded-full mr-1.5 animate-pulse"></span>
+                      Present
+                    </span>
+                  )}
+                </h3>
+                <div className="flex items-center gap-2 text-blue-500 font-mono mb-4 text-sm">
+                  <span>{exp.role}</span>
+                  {exp.location && <span className="text-slate-500">| {exp.location}</span>}
+                </div>
                 <ul className="space-y-3">
                   {exp.responsibilities.map((resp, i) => (
                     <li key={i} className="text-slate-400 text-sm md:text-base relative pl-6">

@@ -34,7 +34,7 @@ const About = () => {
           >
             <div className="text-slate-300 mb-6 text-lg leading-relaxed">
               I am a Bachelor of Technology student in Information Technology at <strong>K.S.R. College of Engineering</strong> (2023 – Present).
-              I previously completed my HSC at <strong>Maharishi Vidya Mandir</strong> with 78%.
+              I am currently working as an <strong>AI Developer Intern at Tekzow</strong>, Bangalore, contributing to AI-driven application development and real-world software projects.
             </div>
 
             <h4 className="mt-8 mb-4 text-[#f8fafc] text-xl font-bold font-montserrat">Skills</h4>
@@ -42,7 +42,7 @@ const About = () => {
             <div className="mb-6">
               <div className="mb-2 text-slate-400 text-sm">Languages & Frameworks:</div>
               <div className="flex flex-wrap gap-3">
-                {['Python', 'JavaScript (React.js)', 'HTML/CSS', 'SQL (MySQL)'].map(skill => (
+                {['Python', 'JavaScript', 'HTML/CSS', 'SQL (MySQL)', 'Node.js'].map(skill => (
                   <span key={skill} className="bg-blue-500/5 border border-blue-500/20 text-blue-500 px-4 py-2 rounded font-mono text-sm hover:bg-blue-500/10 hover:-translate-y-1 transition-all duration-300">
                     {skill}
                   </span>
@@ -53,7 +53,7 @@ const About = () => {
             <div>
               <div className="mb-2 text-slate-400 text-sm">Tools & Soft Skills:</div>
               <div className="flex flex-wrap gap-3">
-                {['Figma', 'GitHub', 'Power BI', 'Team Leadership'].map(skill => (
+                {['Power BI', 'GitHub', 'Figma', 'Problem Solving', 'Analytical Thinking', 'Team Leadership'].map(skill => (
                   <span key={skill} className="bg-blue-500/5 border border-blue-500/20 text-blue-500 px-4 py-2 rounded font-mono text-sm hover:bg-blue-500/10 hover:-translate-y-1 transition-all duration-300">
                     {skill}
                   </span>

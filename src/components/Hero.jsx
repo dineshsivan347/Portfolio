@@ -38,7 +38,7 @@ const Hero = () => {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-slate-300 max-w-[600px] mb-8"
             >
-              Motivated Information Technology student with strong foundation in Web Development. Passionate
+              Motivated Information Technology student and AI Developer Intern at Tekzow with a strong foundation in Web Development and AI-driven application development. Passionate
               about building real-world applications and continuously learning modern technologies to
               contribute effectively in a professional environment.
             </motion.div>
